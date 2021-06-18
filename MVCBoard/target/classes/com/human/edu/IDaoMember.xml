@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.human.edu.IDaoMember">
+	<select id="checkMember" resultType="integer">
+		select count(*) from members where mobile=#{param1} and passcode=#{param2}
+	</select>
+	<insert id="addMember">
+		insert into members(name, gender, mobile, passcode, nick, birthday, interest)
+		 values(#{param1},#{param2},#{param3},#{param4},#{param5},#{param6},#{param7})
+	</insert>
+</mapper>
